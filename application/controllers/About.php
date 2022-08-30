@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class About extends CI_Controller
 {
     public function __construct()
     {
@@ -11,10 +11,10 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Home';
-        $this->load->view('templates/landing_header', $data);
-        $this->load->view('index', $data);
-        $this->load->view('templates/landing_footer', $data);
+        $data['title'] = 'About';
 
+        $this->load->view('templates/landing_header', $data);
+        $this->load->view('about', $data);
+        $this->load->view('templates/landing_footer', $data);
     }
 }
