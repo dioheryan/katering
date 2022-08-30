@@ -8,7 +8,10 @@
                 <thead>
                     <tr>
                         <th>ID Menu</th>
+                        <th>ID Kategori</th>
                         <th>Nama Menu</th>
+                        <th>Deskripsi</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -16,7 +19,10 @@
                     <?php foreach ($datamenu as $m) : ?>
                         <tr>
                             <td><?= $m['id_menu']; ?></td>
+                            <td><?= $m['id_kategori']; ?></td>
                             <td><?= $m['namaMenu']; ?></td>
+                            <td><?= $m['deskripsi']; ?></td>
+                            <td>Rp. <?= $m['harga']; ?></td>
                             <td>
                                 <a href="<?= site_url(); ?>manager/updateMenu/<?= $m['id_menu']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <a href="<?= site_url(); ?>manager/hapusMenu/<?= $m['id_menu']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>

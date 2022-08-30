@@ -34,8 +34,25 @@
         <input type="hidden" class="form-control" name="id_menu">
     </div>
     <div class="form-group">
+        <label>Kategori</label>
+        <select name="id_kategori" id="id_kategori" class="form-control">
+            <option selected>Pilih Kategori</option>
+            <?php foreach ($kategori as $k) : ?>
+                <option value="<?= $k['id_kategori']; ?>"><?= $k['namaKategori']; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="form-group">
         <label>Nama Menu</label>
         <input type="text" class="form-control" name="namaMenu" placeholder="Masukan Nama Menu" required>
+    </div>
+    <div class="form-group">
+        <label>Deskripsi Menu</label>
+        <input type="text" class="form-control" name="deskripsi" placeholder="Masukan Deskripsi Menu" required>
+    </div>
+    <div class="form-group">
+        <label>Harga</label>
+        <input type="text" class="form-control" name="harga" placeholder="Masukan Harga Menu" required>
     </div>
     <button type="submit" class="btn btn-success btn-lg btn-block pt-2 pb-2">Simpan</button>
 </form>

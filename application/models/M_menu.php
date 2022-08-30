@@ -12,7 +12,10 @@ class M_menu extends CI_Model
     {
         $menu = array(
             "id_menu" => $this->input->post("id_menu"),
+            "id_kategori" => $this->input->post("id_kategori"),
             "namaMenu" => $this->input->post("namaMenu"),
+            "deskripsi" => $this->input->post("deskripsi"),
+            "harga" => $this->input->post("harga")
         );
         return $this->db->insert('Menu', $menu);
     }
@@ -21,8 +24,10 @@ class M_menu extends CI_Model
     {
         $menu = array(
             "id_menu" => $this->input->post("id_menu"),
+            "id_kategori" => $this->input->post("id_kategori"),
             "namaMenu" => $this->input->post("namaMenu"),
-           
+            "deskripsi" => $this->input->post("deskripsi"),
+            "harga" => $this->input->post("harga")
         );
         $this->db->where('id_menu', $this->input->post('id_menu'));
         $this->db->update('menu', $menu);

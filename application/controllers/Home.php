@@ -13,8 +13,6 @@ class Home extends CI_Controller
     {
         $data['title'] = 'Home';
 
-        $this->load->view('templates/landing_header', $data);
-        $this->load->view('index', $data);
-        $this->load->view('templates/landing_footer', $data);
+        $this->load->view('home/index', $data);
     }
 }

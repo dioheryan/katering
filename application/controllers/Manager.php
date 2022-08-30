@@ -11,6 +11,7 @@ class Manager extends CI_Controller
         $this->load->model('M_paket');
         $this->load->model('M_pelanggan');
         $this->load->model('M_pesanan');
+        $this->load->model('M_kategori');
         is_logged_in();
     }
 
@@ -139,6 +140,7 @@ class Manager extends CI_Controller
         $data['title'] = 'Tambah Data Menu';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['menu'] = $this->M_menu->getMenu();
+        $data['kategori'] = $this->M_kategori->getKategori();
 
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -161,7 +163,8 @@ class Manager extends CI_Controller
         $data['title'] = 'Ubah Data Menu';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['datamenu'] = $this->M_menu->getMenuById($id);
-
+        $data['kategori'] = $this->M_kategori->getKategori();
+        
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
